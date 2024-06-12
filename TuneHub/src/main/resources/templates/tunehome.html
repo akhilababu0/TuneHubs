@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Premium-Customer</title>
+<link rel="stylesheet" type="text/css" href="/tunehome.css">
+</head>
+<body>
+
+	<nav class="sticky">
+		<div class="header">
+			<h2>TuneHuB</h2>
+		</div>
+		<div>
+		     <form action="pay">
+		      <input class="premium" type="submit" value="Explore Premium">
+	         </form>
+		</div>
+		<div >
+			<form action="logout">
+				<input class="login" type="submit" value="LOGOUT">
+			</form>
+		</div>
+	</nav>
+
+	<div id="b1">
+		<div id="c1">
+			<h1>Playlists</h1>
+			<div>
+				<form action="createplaylists">
+					<input id="playlist" class="form2" type="submit" value="CREATE PLAYLIST">
+				</form>
+				<form action="viewplaylists">
+					<input id="playlist" class="form2" type="submit" value="VIEW PLAYLIST">
+				</form>
+			</div>
+
+		</div>
+
+
+		<div id="c2">
+			<div id="m1">
+				<div id="d12">
+					<h3>Latest Songs</h3>
+				</div>
+
+				<div id="d1222" class="container">
+					<!-- Song elements will be dynamically rendered here -->
+					<div id="d12222" class="song" th:each="song : ${songs}">
+						<h3 th:text="${song.name}"></h3>
+						<p th:text="${song.artist}"></p>
+						<p th:text="${song.genre}"></p>
+						<!-- Add more song details here -->
+						<div id="d123">
+							<audio id="cntr" controls>
+								<source th:src="${song.link}">
+							</audio>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+</body>
+</html>

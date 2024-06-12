@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:each="song:${all.songs}">
+				<span th:text="${song.name}"></span>
+				<!-- Add more song details here -->
+				<div>
+					<audio controls>
+						<source th:src="${song.link}">
+					</audio>
+				</div>
+			</div>
+
+</body>
+</html>

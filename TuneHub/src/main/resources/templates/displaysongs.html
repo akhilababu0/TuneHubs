@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dispaly Songs</title>
+<link rel="stylesheet" type="text/css" th:href="@{/displaysongs.css}">
+</head>
+<body>
+	
+	
+	  <div class="container">
+        <!-- Song elements will be dynamically rendered here -->
+        <div class="song" th:each="song : ${songs}">
+            <h2 th:text="${song.name}"></h2>
+            <p th:text="${song.artist}"></p>
+              <p th:text="${song.genre}"></p>
+            <!-- Add more song details here -->
+            <div>
+            <audio controls>
+				<source th:src="${song.link}">
+				</audio>
+            </div>
+        </div>
+   </div>
+	
+	
+</body>
+</html>

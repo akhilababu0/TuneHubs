@@ -1,0 +1,23 @@
+body{
+	background-color: blue;
+}
+.create{
+	color:#ce4f04;
+	margin-top:80px;
+	width: 35%;
+	height: 550px;
+	background-color: #000000;
+	margin-right: 30px;
+	margin-left: 400px;
+	/* text-align: center;
+	justify-content: center; */
+	padding-left:200px;
+	padding-top: 90px;
+	font-size:15px;
+	font-weight:400;
+	
+}
+h2{
+	color:red;
+	padding-top:0px;
+}

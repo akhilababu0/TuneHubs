@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:unless="${ispremium}" class="non-premium">
+		<form action="pay">
+			<input type="submit" value="Get Premium">
+		</form>
+		<br>
+		<form action="logout">
+			<input type="submit" value="LOGOUT">
+		</form>
+	</div>
+
+	<div th:if="${ispremium}" class="premium">
+
+		<div class="container">
+			<!-- Song elements will be dynamically rendered here -->
+			<div class="song" th:each="song : ${songs}">
+				<h2 th:text="${song.name}"></h2>
+				<p th:text="${song.artist}"></p>
+				<p th:text="${song.genre}"></p>
+				<!-- Add more song details here -->
+				<div>
+					<audio controls>
+						<source th:src="${song.link}">
+					</audio>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>

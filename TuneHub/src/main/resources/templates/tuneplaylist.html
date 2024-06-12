@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/tuneplaylist.css">
+</head>
+<body>
+	<div id="pm" >
+		<!-- Song elements will be dynamically rendered here -->
+		<div th:each="all:${allplaylist}">
+			<a href="/tuneplaylistview"></a><h3 th:text="${all.name}"></h3>
+			
+	
+		<div th:each="song:${all.songs}">
+				<span th:text="${song.name}"></span>
+				Add more song details here
+				<div>
+					<audio controls>
+						<source th:src="${song.link}">
+					</audio>
+				</div>
+		</div>	
+	</div>
+</body>
+</html>
+
+
+
